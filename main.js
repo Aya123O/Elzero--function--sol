@@ -33,6 +33,110 @@ function calculate(firstNum, secondNum, operation) {
   calculate(20, 30, 'multiply'); // 600
   calculate(20); // Second Number Not Found
   /****************************************************************************************************************** */
+/******************************************************************************************************************** */
+/**Assigment One* */
+function getDetails(zName, zAge, zCountry) {
+    let result,result2,result3;
+    function namePattern(zName) {
+      // Write Your Code Here
+        let arr=zName.split(" ");
+        result=arr[0]+" "+((arr[1][0]).toUpperCase())+".";
+      return result;
+    }
+    function ageWithMessage(zAge) {
+      // Write Your Code Here
+        let arr1=zAge.split(" ");
+        result2=arr1[0]
+      return result2;
+    }
+    function countryTwoLetters(zCountry) {
+      // Write Your Code Here
+        result3=zCountry[0].toUpperCase()+zCountry[1].toUpperCase()
+        return result3;
+    }
+    function fullDetails() {
+      // Write Your Code Here
+      namePattern(zName);
+      ageWithMessage(zAge);
+      countryTwoLetters(zCountry);
+       return `Hello ${result} , Your Age Is ${result2}, You Live In ${result3}`;
+
+
+    }
+    return fullDetails(); // Do Not Edit This
+  }
+
+  console.log(getDetails("Osama Mohamed", "38 Is My Age", "Egypt"));// Hello Osama M., Your Age Is 38, You Live In EG
+  console.log(getDetails("Ahmed ali", "32 Is The Age", "Syria"));// Hello Ahmed A., Your Age Is 32, You Live In SY
+  /*************************************************************************************************************** */
+/**Assigment two* */
+function itsMe() {
+    return `Iam A Normal Function`;
+  }
+
+  console.log(itsMe()); // Iam A Normal Function
+
+   itsMe =>`Iam A Arrow Function`;
+  console.log(itsMe()); // Iam A Arrow Function
+  /////////////////////////////////////////////////////////////////////////
+  function urlCreate(protocol, web, tld) {
+    return `${protocol}://www.${web}.${tld}`;
+  }
+
+  console.log(urlCreate("https", "elzero", "org"));//Iam A Normal Function
+    urlCreate = (protocol, web, tld)=>`${protocol}://www.${web}.${tld}`;
+
+  console.log(urlCreate("https", "elzero", "org"));//Iam A Normal Function
+
+  /********************************************************************************************************* */
+/**Assigment three* */
+function checker(zName) {
+    return function (status) {
+      return function (salary) {
+        return status === "Available" ? `${zName}, My Salary Is ${salary}` : `Iam Not Avaialble`;
+      };
+    };
+  }
+
+  console.log(checker("Osama")("Available")(4000)); // Osama, My Salary Is 4000
+  console.log(checker("Ahmed")("Not Available")()); // Iam Not Avaialble
+
+    checker=(zName) =>{
+    return  status => {
+      return  salary => {
+        return status === "Available" ? `${zName}, My Salary Is ${salary}` : `Iam Not Avaialble`;
+      };
+    };
+  }
+
+  console.log(checker("Osama")("Available")(4000)); // Osama, My Salary Is 4000
+  console.log(checker("Ahmed")("Not Available")()); // Iam Not Avaialble
+/************************************************************************************************************** */
+/**Assigment four* */
+function specialMix(...data) {
+    let num;
+    let myresult=0;
+    for(let i=0;i<data.length;i++){
+        num=parseInt(data[i])
+        if ( isNaN(num))
+        {
+            num=0
+        }
+        myresult+=num;
+    }
+    return myresult;
+  }
+
+  console.log(specialMix(10, 20, 30)); // 60
+  console.log(specialMix("10Test", "Testing", "20Cool")); // 30
+  console.log(specialMix("Testing", "10Testing", "40Cool")); // 50
+  console.log(specialMix("Test", "Cool", "Test")); // All Is Strings
+/************************************************************************************************************** */
+
+
+
+
+
   /**Assigment Three* */
   function ageInTime(theAge) {
     if(theAge>10 && theAge<100){
